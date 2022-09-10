@@ -36,9 +36,11 @@ export default function Home() {
   const [ids, setIds] = useState([]);
 
   const playDisco = () => {
-    const id = setInterval(random, 1000);
-    setInterval(id);
-    setIds([...id, ids]);
+    const id = setInterval(
+      () => setPixels(CanvasLib.createRandomCanvas()),
+      100
+    );
+    setids([...ids, id]);
   };
 
   const stopDisco = () => {
