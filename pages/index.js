@@ -22,25 +22,22 @@ export default function Home() {
   };
 
   const clear = () => {
-    const newPixels = CanvasLib.createEmptyCanvas();
-    setPixels(newPixels);
+    setPixels(CanvasLib.createEmptyCanvas());
     //your code here
     //Hint : use CanvasLib.createEmptyCanvas()
   };
 
   const random = () => {
-    const newPixels = CanvasLib.createRandomCanvas();
-    setPixels(newPixels);
+    setPixels(CanvasLib.createRandomCanvas());
   };
 
   const [ids, setIds] = useState([]);
-
   const playDisco = () => {
     const id = setInterval(
       () => setPixels(CanvasLib.createRandomCanvas()),
       100
     );
-    setids([...ids, id]);
+    setIds([...ids, id]);
   };
 
   const stopDisco = () => {
